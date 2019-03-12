@@ -26,7 +26,7 @@ addons:
 # of respecting your application name within .travis.yml file too
 env:
   global:
-    - GOOGLE_URL="https://www.google.com"
+    - GOOGLE_URL="https://www.google.com.uy/"
     - AUTOMATION_SELENIUM_PORT="4444"
     - AUTOMATION_SELENIUM_HOST="127.0.0.1"
 

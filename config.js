@@ -5,7 +5,7 @@ var config = {
   },
 
   globals : {
-    url: process.env.GOOGLE_URL || 'http://www.google.com/',
+    url: process.env.GOOGLE_URL || 'https://www.google.com.uy/',
     
   },
  }
