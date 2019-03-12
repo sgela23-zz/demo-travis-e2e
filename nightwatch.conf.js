@@ -32,7 +32,7 @@ module.exports = {
       },
 
      "desiredCapabilities" : {
-                "browserName": "chrome",
+                "browserName": "chromium-browser",
                 "javascriptEnabled" : true,
                 "chromeOptions" : {
                 "args" : ["--no-sandbox", "--headless"]
