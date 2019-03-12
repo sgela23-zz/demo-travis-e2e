@@ -17,8 +17,8 @@ addons:
   apt:
     update: yes
     packages:
-      - chromium
-      - openjdk-8-jre-headless
+      - chromium-browser
+      - openjdk-8-jdk
 
 # Set global environmental variables. Take care to NOT EXPOSE SENSITIVE KEY/SECRET combinations
 # NOTE: If your project carries out more than one Dockerfile, please rename all of your Dockerfiles to
