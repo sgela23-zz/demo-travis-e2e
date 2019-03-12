@@ -15,7 +15,7 @@ after(browser){
 		browser
 		.assert.title("Google")
 		.waitForElementVisible('body', 25000)
-		.setValue('input[title=Buscar]', 'Hello')
+		.setValue('input.gLFyf.gsfi', 'Hello')
 		.assert.containsText('.erkvQe:first-child', 'hello')
 	},
 
