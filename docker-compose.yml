@@ -1,0 +1,19 @@
+version: '3'
+services:
+  auto-demo:
+    container_name: auto-demo
+    build: .
+    command: ["npm","run","tests"]
+    volumes:
+      - ${PWD}:/app
+      - /app/node_modules
+    networks:
+      - podium_network
+    environment:
+      - AUTOMATION_SELENIUM_HOST=127.0.0.1
+      - AUTOMATION_SELENIUM_PORT=4444
+      - GOOGLE_URL= http://www.google.com/
+
+networks:
+  podium_network:
+    external: true

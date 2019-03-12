@@ -1,0 +1,43 @@
+# NOTE: Assumes the following env vars are defined in travis-ci
+#   - AWS_ACCT_NUMBER - The AWS account number
+#   - AWS_DEFAULT_REGION - The Working AWS region
+#   - AWS_ACCESS_KEY_ID - Credentials for pushing docker images to ECR (only ECR push permissions)
+#   - AWS_SECRET_ACCESS_KEY - Credentials for pushing docker images to ECR (only ECR push permissions)
+#   - GITHUB_TOKEN - The github ` travis-ci` token for accessing `ci-tools` private repo
+
+# Select language and proper versions
+language: node_js
+node_js:
+  - "10.15.1"
+
+# Configure base OS and global dependencies
+sudo: required
+dist: xenial
+addons:
+  apt:
+    update: yes
+    packages:
+      - python3-pip
+      - python3-setuptools
+
+# Set global environmental variables. Take care to NOT EXPOSE SENSITIVE KEY/SECRET combinations
+# NOTE: If your project carries out more than one Dockerfile, please rename all of your Dockerfiles to
+# Dockerfile-APPLICATION-NAME in order to dynamically compile and build all docker images containers. Take care
+# of respecting your application name within .travis.yml file too
+env:
+  global:
+    - GOOGLE_URL="https://www.google.com"
+    - AUTOMATION_SELENIUM_PORT="4444"
+    - AUTOMATION_SELENIUM_HOST="127.0.0.1"
+
+# Install and configure dependencies. In this section we'll download download our ci-tool repo's scripts so that we can build and push
+# Our images to docker repository
+
+# Build up docker image and tag it with the commit hash
+install:
+  - npm install
+
+# Run all type of tests here of our docker images built
+script:
+  - npm run tests
+
