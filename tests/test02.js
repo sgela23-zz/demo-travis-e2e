@@ -16,7 +16,7 @@ after(browser){
 		.assert.title("Google")
 		.waitForElementVisible('body', 25000)
 		.setValue('input.gLFyf.gsfi', 'Hello')
-		.assert.containsText('.erkvQe:first-child', 'Forced fail')
+		.assert.containsText('.erkvQe:first-child', 'hello')
 		.click('.erkvQe:first-child')
 	}
 
