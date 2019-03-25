@@ -8,6 +8,7 @@ var config = {
     url: process.env.GOOGLE_URL || 'https://www.google.com.uy/',
     
   },
+
  }
 
 module.exports = config;

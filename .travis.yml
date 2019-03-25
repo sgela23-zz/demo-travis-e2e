@@ -39,4 +39,4 @@ install:
 
 # Run all type of tests here of our docker images built
 script:
-  - npm run tests
+  - node nightwatch /tests --reporter html-reporter.js
